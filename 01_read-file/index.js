@@ -1,4 +1,5 @@
 const fs = require('fs')
+const path = require('path')  // path should be always on top
 
 // without string it creates a buffer data that is cannot read
 
@@ -17,7 +18,7 @@ fs.readFile('./file/starter.txt' , 'utf8', (err, data) => {
 // exit on uncaught error
 
 //The process object provides information about, and control over, the current Node.js process
-console.log('hello.......')
+
 const process = require('node:process');
 process.on('Uncaught exception' , err => {
     console.error(`There was an uncaught error:' $(err)`);
@@ -27,14 +28,15 @@ process.on('Uncaught exception' , err => {
 
 // path is available to do or target tne file
 
-const path = require('path')
 
-fs.readFile(path.join(__dirname, 'files' , 'starter.txt') , (err, data) => {
-    if (err) throw err;
-    console.log(data.toString())
-})
 
-fs.writeFile(path.join(__dirname, 'files' , 'reply.txt') , (err, data) => {
+fs.readFile('./file/starter.txt', (err, data) => {
     if (err) throw err;
-    console.log(data)
-})
+    console.log(data.toString());
+});
+
+
+fs.writeFile(path.join(__dirname, 'file', 'reply.txt'), 'Hello, this is the content to be written!', (err) => {
+    if (err) throw err;
+    console.log('File has been written successfully.');
+});
