@@ -88,6 +88,8 @@ fs.rename(
     }
   );
 
+
+  // it is not good practice just for info
   // fs.writeFile(
 //   path.join(__dirname, "file", "reply.txt"),
 //   "Hello, this is the content to be written!",
