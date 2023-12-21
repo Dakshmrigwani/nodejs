@@ -1,0 +1,21 @@
+Interview for node
+
+the nodejs is made up of C , C++ , JS
+
+when we type and we get the result in the console so how nodejs works between this
+
+i have added stack photo see it
+
+we call this as event loop
+
+main boy is call stack -> that uit ike register the data
+
+when you write console.log this code run in MAIN() function by default it runs on the background
+
+the stack follow LIFO rule
+
+and when code checks if there is not any function then main also empty
+
+node api keep the task which is part of c & c++ like setTimeout()
+
+the task of c & c++ task wait for stack to empty when the stack empty like it reaches to finishing up the stack empty and 0 sec timeout reaches to stack
