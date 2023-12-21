@@ -5,6 +5,8 @@ const fs = require("fs");
 // path is available to do or target the file
 const path = require("path"); // path should be always on top
 
+const dirname = path.join(__dirname, "file");
+
 // without string it creates a buffer data that is cannot read
 
 fs.readFile("./file/starter.txt", (err, data) => {
@@ -80,17 +82,23 @@ fs.appendFile(
 // rename file helps to rename , it takes old and new parameter
 
 fs.rename(
-    path.join(__dirname, "file", "test1.txt"),
-    path.join(__dirname, "file", "newtest1.txt"),
-    (err) => {
-      if (err) throw err;
-      console.log("rename successfully.");
-    }
-  );
+  path.join(__dirname, "file", "test1.txt"),
+  path.join(__dirname, "file", "newtest1.txt"),
+  (err) => {
+    if (err) throw err;
+    console.log("rename successfully.");
+  }
+);
 
+// mention file to just give name
+fs.readdir(dirname, (err, files) => {
+  files.forEach((item) => {
+    console.log("the name of the file is" , item)
+  });
+});
 
-  // it is not good practice just for info
-  // fs.writeFile(
+// it is not good practice just for info
+// fs.writeFile(
 //   path.join(__dirname, "file", "reply.txt"),
 //   "Hello, this is the content to be written!",
 //   (err) => {
