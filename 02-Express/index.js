@@ -1,4 +1,6 @@
 const express = require("express");
+const path = require("path")
+
 const app = express(); // we written due to bcsit is not in excecutable state
 app.get("", (req, res) => {
   // it is for home page
@@ -9,5 +11,8 @@ app.get("", (req, res) => {
 app.get("/about", (req, res) => {
   res.send("Hello this is About Page");
 });
+const publicPath = path.join(__dirname , "Html-page")
+
+app.use(express.static(publicPath)) // it helps to load static page
 
 app.listen(5000)
