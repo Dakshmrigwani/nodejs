@@ -16,8 +16,13 @@ app.set(`view engine`, `ejs`);
 app.get("/profile",(_,resp) => {
     const user = {
         name:`daksh`,
+        skills: [`html` , `css` , `js`, `bootstrap 5`, `jquery`, `React` , `redux`]
     }
     resp.render("profile" , {user})
+    })
+
+    app.get("/login",(_,resp)=>{
+        resp.render("login" ,)
     })
 app.use(express.static(publicPath)); // it helps to load static page
 
