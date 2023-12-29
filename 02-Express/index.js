@@ -11,7 +11,7 @@ app.get("", (req, res) => {
 app.get("/about", (req, res) => {
   res.send("Hello this is About Page");
 });
-const publicPath = path.join(__dirname , "Html-page")
+const publicPath = path.join(__dirname , "Html-page") // now you don't have to add extension
 
 app.use(express.static(publicPath)) // it helps to load static page
 
